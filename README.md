@@ -1,47 +1,142 @@
-# GlobeTrek — Worldwide Tourism & Travel Booking Management System
+# GlobeTrek --- Tourism Package & Travel Booking Management System
 
-[![FastAPI](https://img.shields.io/badge/Backend-FastAPI_0.110+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/Frontend-React_18.3+-61DAFB.svg?logo=react&logoColor=black)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Bundler-Vite_6.0+-646CFF.svg?logo=vite&logoColor=white)](https://vitejs.dev)
-[![TailwindCSS](https://img.shields.io/badge/Styles-Tailwind_CSS_3.4+-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-[![Database](https://img.shields.io/badge/Database-SQLite_%2F_MySQL_3NF-003B57.svg?logo=sqlite&logoColor=white)](https://sqlite.org)
-[![Tests](https://img.shields.io/badge/Tests-13%2F13_Passed-success.svg)](backend/tests)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+GlobeTrek is a web-based tourism and travel booking management system
+developed as a Database Management Systems (DBMS) project. It helps
+customers explore tour packages and make bookings while allowing tour
+guides and administrators to manage departures, itineraries, payments,
+cancellations, and refunds.
 
-> **Course:** Database Management Systems (DBMS PBL Project 63)  
-> **Design Theme:** MakeMyTrip (MMT) Inspired Luxury Worldwide & Domestic Travel Portal  
-> **Database Architecture:** Normalized up to Third Normal Form (3NF) with Working ACID Integrity Constraints  
-> **Tech Stack:** Python FastAPI, SQLAlchemy, SQLite / MySQL, React 18, Vite, Tailwind CSS, Recharts, Lucide Icons  
+## Project Objectives
 
----
+-   Organize travel agency information in a relational database.
+-   Make it easier for customers to search packages and manage bookings.
+-   Help administrators manage destinations, packages, departures,
+    guides, and payments.
+-   Reduce booking errors through database constraints and transaction
+    handling.
+-   Demonstrate database concepts such as normalization, relationships,
+    SQL queries, and views.
 
-## 1. Project Overview & Problem Statement
+## Main Features
 
-Tourism and holiday agencies frequently face operational failures caused by spreadsheet-based itinerary and capacity planning:
-1. **Departure Capacity Overbooking:** Multiple customers reserving the last available seat simultaneously.
-2. **Tour Guide Scheduling Conflicts:** A licensed guide accidentally assigned to two overlapping travel tours.
-3. **Inconsistent Cancellation Penalties:** Opaque fees without transparent date-interval rules.
-4. **Untracked Refund Liabilities:** Refunds exceeding the amount actually paid by the traveller.
+-   **Customer portal:** Browse packages, book a tour, manage traveller
+    details, view booking information, and request cancellations.
+-   **Tour guide portal:** View assigned departures, traveller
+    manifests, and itineraries.
+-   **Administrator dashboard:** Manage tourism records and review
+    booking, revenue, and destination statistics.
+-   **Package and itinerary management:** Organize destinations,
+    day-wise itineraries, hotels, transport, and departures.
+-   **Booking and payment management:** Track bookings and payment
+    records.
+-   **Cancellation and refund management:** Record cancellation requests
+    and related refunds.
+-   **SQL demonstration:** Explore example SQL queries and database
+    views for academic evaluation.
+-   **Demo payment flow:** Demonstrate payment options without treating
+    the simulator as a real payment gateway.
 
-**GlobeTrek** solves these issues through a fully realized, 3NF-normalized relational database management system paired with an interactive, modern web application inspired by MakeMyTrip.
+## Technology Stack
 
----
+-   **Frontend:** React, Vite, Tailwind CSS, Recharts, Lucide Icons
+-   **Backend:** Python, FastAPI, SQLAlchemy
+-   **Database:** SQLite or MySQL
+-   **API style:** REST
 
-## 2. Key Features
+## Entity Relationship Diagram
 
-- **MakeMyTrip-Inspired UI/UX:**
-  - Royal travel navy (`#0B2545`), crisp whites, vibrant sunset coral (`#FF6B35`), and amber gold accents.
-  - Interactive multi-criteria Hero Search panel (Starting City, Destination, Departure Date Calendar, Travellers count, and Budget range stepper).
-  - 50+ worldwide & domestic destination cards with live starting prices.
-  - Day-by-day interactive itinerary accordions with meals, hotel, and vehicle specifications.
-  - Transparent pricing breakdown: Base price + 5% Indian tourism GST − Multi-traveller promotional discounts.
-  - Demo Payment simulator: UPI QR Scanner, Credit/Debit card, NetBanking, and 1-Click Instant Demo Pay.
-  - Printable / Downloadable E-Ticket Voucher (`GT-2026-XXXX`).
-- **Role-Based Portals & Dashboards:**
-  - **Customer Portal:** Search packages, book seats with passenger details, view ticket vouchers, request cancellations, and track live refund disbursements.
-  - **Tour Guide Portal:** View assigned departure schedules, passenger manifests with contact numbers, and day-wise itineraries.
-  - **Administrator Portal:** Executive KPI counters, interactive Recharts graphs (monthly revenue trend, destination popularity, booking status distribution), full CRUD management panels.
-  - **Live SQL Query & View Runner:** Live academic showcase where examiners can click and execute any of the 14 required SQL queries and 5 database views, viewing the executed SQL statement, execution time in milliseconds, and tabulated relational data.
+The diagram below shows the main entities and relationships in the
+GlobeTrek database.
+
+![GlobeTrek Entity Relationship Diagram](docs/er-diagram.png)
+
+*Diagram note: Use the ER diagram as the visual overview of the
+database. Confirm table names, keys, and relationship cardinalities
+against the implemented schema before submitting the final database
+documentation.*
+
+## Database Design
+
+The database is designed around these main areas:
+
+  -----------------------------------------------------------------------
+  Area                                Main entities
+  ----------------------------------- -----------------------------------
+  Users and people                    Users, Customers, Travellers,
+                                      Guides
+
+  Tour catalogue                      TourPackages, Destinations,
+                                      PackageDestinations, ItineraryDays,
+                                      PackageHotels
+
+  Travel operations                   Departures, Transport,
+                                      GuideAssignments
+
+  Reservations                        Bookings, BookingTravellers
+
+  Financial records                   Payments, Cancellations, Refunds
+  -----------------------------------------------------------------------
+
+The design aims to reduce duplicate data and maintain referential
+integrity using primary keys, foreign keys, validation rules, and
+transactions where appropriate.
+
+## Getting Started
+
+### Prerequisites
+
+-   Python 3.10 or newer
+-   Node.js and npm
+-   SQLite or MySQL
+
+### Run the project
+
+The exact commands depend on the folder structure and dependency files
+in your repository.
+
+1.  Clone or download this repository.
+2.  Install the backend dependencies listed in the backend requirements
+    file.
+3.  Configure the database connection using the project's configuration
+    or environment variables.
+4.  Start the FastAPI backend using the instructions in the backend
+    folder.
+5.  Install frontend dependencies with `npm install` from the frontend
+    folder.
+6.  Start the frontend with the development command defined in
+    `package.json`.
+7.  Open the local frontend URL shown in the terminal.
+
+## Database Integrity Rules
+
+The application should enforce these business rules in the database
+and/or backend:
+
+-   A departure must not exceed its available capacity.
+-   A guide must not be assigned to overlapping departures.
+-   A booking must reference a valid departure and customer.
+-   Traveller records must be linked to the relevant booking.
+-   Refunds must not exceed the amount paid.
+-   Cancellation charges should follow the project's defined
+    cancellation policy.
+
+## Academic Scope
+
+This project demonstrates relational database design, normalization up
+to Third Normal Form (3NF), CRUD operations, SQL queries and views, and
+the use of a web application to interact with the database.
+
+## Project Status
+
+This README describes the intended project structure and features.
+Update the setup instructions, database rules, and feature list to match
+the final implementation before submission.
+
+## License
+
+Add the license used by your repository here. If the project is released
+under the MIT License, include the full MIT license text in a `LICENSE`
+file.
 - **Enterprise SEO & AI-Readiness:**
   - Full server-rendered semantic HTML fallback for search engines and evaluators.
   - Schema.org JSON-LD structured data for `TravelAgency` and `WebSite`.
