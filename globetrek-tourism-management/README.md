@@ -29,7 +29,7 @@ Tourism and holiday agencies frequently face operational failures caused by spre
 
 ## 2. Key Features
 
-- **MakeMyTrip-Inspired UI/UX:**
+- ** UI/UX:**
   - Royal travel navy (`#0B2545`), crisp whites, vibrant sunset coral (`#FF6B35`), and amber gold accents.
   - Interactive multi-criteria Hero Search panel (Starting City, Destination, Departure Date Calendar, Travellers count, and Budget range stepper).
   - 50+ worldwide & domestic destination cards with live starting prices.
