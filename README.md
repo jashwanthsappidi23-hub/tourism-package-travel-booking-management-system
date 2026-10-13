@@ -1,4 +1,4 @@
-# GlobeTrek --- Tourism Package & Travel Booking Management System
+# 🗻GlobeTrek --- Tourism Package & Travel Booking Management System
 
 GlobeTrek is a web-based tourism and travel booking management system
 developed as a Database Management Systems (DBMS) project. It helps
