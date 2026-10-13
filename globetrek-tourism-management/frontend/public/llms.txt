@@ -1,0 +1,52 @@
+# GlobeTrek Tourism Package & Travel Booking Management System
+> Full-Stack College DBMS PBL Project 63 (3NF Relational Database & MakeMyTrip-inspired Web Application)
+
+## Overview
+GlobeTrek is an end-to-end full-stack tourism package and travel booking management platform inspired by MakeMyTrip (MMT). It integrates a normalized relational database in Third Normal Form (3NF) with a Python FastAPI backend and a responsive React 18 + Vite + Tailwind CSS frontend.
+
+## Key Features
+- **Tour Package Discovery**: Search across 50+ worldwide & domestic destinations (India, Europe, Asia, Americas, Middle East, Oceania) with interactive day calendar & budget sliders.
+- **Relational Integrity**: 20 normalized database tables, 5 SQL analytical views, and 14 academic SQL reporting queries enforcing foreign keys and business constraints.
+- **Overbooking Prevention**: Real-time capacity checks ensuring `booked_seats <= max_capacity`.
+- **Guide Conflict Resolution**: Self-join validation preventing overlapping schedule assignments for tour guides.
+- **Demo Payment Gateway Simulation**: UPI QR code, Credit/Debit Card, NetBanking, and 1-Click Demo Pay with instant transaction ID generation.
+- **Cancellation & Refunds**: Automated cancellation fee calculations (10%, 25%, 50% tiers based on departure notice) with departure seat restoration.
+- **Role-Based Access Control (RBAC)**: JWT-secured portals for Customers, Administrators, and Tour Guides.
+
+## Database Schema Highlights (3NF)
+1. `Users` - Customer, Admin, Guide authentication
+2. `Roles` - System role definitions
+3. `UserRoles` - Multi-role junction
+4. `Destinations` - Cities, states, regions
+5. `Countries` - Worldwide nation registry
+6. `PackageCategories` - Standardized tour types
+7. `TourPackages` - Main package catalog
+8. `PackageItineraries` - Day-by-day itineraries
+9. `Hotels` - Verified 3-5 star accommodation
+10. `PackageHotels` - Hotel assignment per package
+11. `TransportOptions` - Flight, Volvo bus, SUV, coach specs
+12. `PackageTransport` - Transit options per package
+13. `TourGuides` - Certified local guides & languages
+14. `Departures` - Scheduled batches with capacity tracking
+15. `Bookings` - Traveller reservations
+16. `BookingTravellers` - Individual passenger manifest
+17. `Payments` - Transaction history and payment modes
+18. `Cancellations` - Cancellation records & reason tracking
+19. `Refunds` - Processed refund status and amounts
+20. `AuditLogs` - Administrative mutation logs
+
+## Key URLs and Pages
+- Homepage: `/`
+- Tour Packages: `/packages`
+- Explore Destinations: `/destinations`
+- About Us: `/about`
+- Contact Support: `/contact`
+- Customer Login: `/login`
+- Registration: `/register`
+- DBMS Reports & Analytics: `/reports`
+- API Documentation: `/api/docs` or `/docs`
+
+## Contact & Institutional Info
+- Project: College DBMS Project-Based Learning (PBL) Project 63
+- Platform: GlobeTrek Holidays Platform
+- Technical Stack: Python FastAPI, SQLite/MySQL, React 18, Vite, Tailwind CSS, Lucide Icons, Recharts

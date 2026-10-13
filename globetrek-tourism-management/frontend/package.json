@@ -1,0 +1,27 @@
+{
+  "name": "bharatyatra-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "postinstall": "cp -r node_modules/@rollup/wasm-node/dist/wasm-node node_modules/rollup/dist/wasm-node 2>/dev/null && cp node_modules/@rollup/wasm-node/dist/native.js node_modules/rollup/dist/native.js 2>/dev/null || true",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^1.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.13.0"
+  },
+  "devDependencies": {
+    "@rollup/wasm-node": "^4.56.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vite": "^6.0.3"
+  }
+}

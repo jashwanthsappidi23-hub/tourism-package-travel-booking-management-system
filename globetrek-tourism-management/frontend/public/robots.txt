@@ -1,0 +1,31 @@
+# robots.txt for GlobeTrek Worldwide Tourism Platform
+User-agent: *
+Allow: /
+Allow: /packages
+Allow: /destinations
+Allow: /about
+Allow: /contact
+Allow: /login
+Allow: /register
+Allow: /reports
+Disallow: /api/
+
+# AI Crawlers & LLM Agents
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+# Canonical Sitemap and LLM Context
+Sitemap: https://globetrek-tourism.com/sitemap.xml
